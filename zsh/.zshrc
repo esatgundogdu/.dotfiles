@@ -10,11 +10,11 @@ zle_highlight=('paste:none')
 unsetopt BEEP
 
 # completions
-autoload -Uz compinit
-zstyle ':completion:*' menu select
-zmodload zsh/complist
+#autoload -Uz compinit
+#zstyle ':completion:*' menu select
+#zmodload zsh/complist
 # compinit
-_comp_options+=(globdots)	# Include hidden files
+#_comp_options+=(globdots)	# Include hidden files
 
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
@@ -25,13 +25,13 @@ zle -N down-line-or-beginning-search
 autoload -Uz colors && colors
 
 # Useful functions
-source "$ZDOTDIR/zsh-functions"
+source "$ZDOTDIR/functions.zsh"
 
 # Normal files to source
-zsh_add_file "zsh-exports"
-zsh_add_file "zsh-vim-mode"
-zsh_add_file "zsh-aliases"
-zsh_add_file "zsh-prompt"
+zsh_add_file "completion.zsh"
+zsh_add_file "exports.zsh"
+zsh_add_file "aliases.zsh"
+zsh_add_file "prompt.zsh"
 
 # Plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
@@ -44,10 +44,10 @@ zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 
 
 # FZF
-[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
-[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
-[ -f $ZDOTDIR/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
-compinit
+#[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+#[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+#[ -f $ZDOTDIR/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
+#compinit
 
 # Edit line in vim with ctrl-e:
 #autoload edit-command-line; zle -N edit-command-line

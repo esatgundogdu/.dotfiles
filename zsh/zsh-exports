@@ -1,5 +1,0 @@
-# export example
-#export PATH="$HOME/.local/bin":$PATH
-
-# get pip completion
-#eval "`pip completion --zsh`"
