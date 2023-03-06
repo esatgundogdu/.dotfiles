@@ -1,7 +1,12 @@
 # dotfiles
 
 ## Installation
-Run install script:
+Install all packages and configurations from scratch
+```bash
+$ chmod +x install.sh
+$ ./install.sh -s
+```
+Or only stow configurations:
 ```bash
 $ chmod +x install.sh
 $ ./install.sh
