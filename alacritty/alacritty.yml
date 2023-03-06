@@ -3,15 +3,21 @@ window:
   padding:
     x: 5
     y: 5
-  opacity: 0.9
+    #opacity: 0.9
 
 # Keybindinds
 key_bindings:
   - { key: V, mods: Control|Shift, action: Paste }
 
 # Color Scheme
-import:
-  - ~/.config/alacritty/colorscheme/themes/dracula.yaml
+#import:
+#  - ~/.config/alacritty/colorscheme/themes/dracula.yaml
+
+#font:
+#  size: 9
 
 font:
-  size: 9
+  normal:
+    #family: Hack Nerd Font Mono
+    family: JetBrainsMonoNL Nerd Font Mono
+    style: Reqular

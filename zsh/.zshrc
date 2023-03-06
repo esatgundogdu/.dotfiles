@@ -9,13 +9,6 @@ zle_highlight=('paste:none')
 # beeping is annoying
 unsetopt BEEP
 
-# completions
-#autoload -Uz compinit
-#zstyle ':completion:*' menu select
-#zmodload zsh/complist
-# compinit
-#_comp_options+=(globdots)	# Include hidden files
-
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
@@ -28,10 +21,10 @@ autoload -Uz colors && colors
 source "$ZDOTDIR/functions.zsh"
 
 # Normal files to source
-zsh_add_file "completion.zsh"
-zsh_add_file "exports.zsh"
-zsh_add_file "aliases.zsh"
-zsh_add_file "prompt.zsh"
+for i in $(ls $ZDOTDIR/*.zsh);
+do
+  source $i;
+done
 
 # Plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"

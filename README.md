@@ -8,4 +8,4 @@ $ ./install.sh
 ```
 
 ## Adding new config
-Add stow command to install script (specify target directory, you may ensure target directory with -n argument by running in simulation mode.)
+Add stow command to install script (specify target directory, you may ensure target directory with -nv argument by running in simulation mode.)
