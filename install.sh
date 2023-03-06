@@ -1,9 +1,13 @@
 #!/bin/bash
 # check if stow installed
 if ! command -v stow &> /dev/null; then
-  echo "Stow package could not be found! Please install stow package before executing this script."
-  echo "For Arch-based distros: pacman -S stow"
-  exit
+  if [ $(which pacman 2>/dev/null) ]; then
+    echo "Stow package could not be found, installing..."
+    sudo pacman -S stow
+  else
+    echo "Stow package could not be found! Please install stow package before executing this script."
+    exit
+  fi
 fi
 
 while getopts ":sh" o; do
@@ -22,7 +26,7 @@ done
 
 if [ $FROM_SCRATCH ]; then
   REQUIRED_PACKAGES="ttf-jetbrains-mono-nerd ttf-hack-nerd neovim alacritty zsh"
-  if [ $(which pacman) ]; then
+  if [ ! -z $(which pacman 2>/dev/null) ]; then
     echo "Pacman found, necessary packages will be automatically installed."
     sudo pacman -S $REQUIRED_PACKAGES
   else
@@ -31,7 +35,8 @@ if [ $FROM_SCRATCH ]; then
   fi
 fi
 
-# -v for verbose (log outputs), -R for restow (to delete removed files)
+# -v for verbose (log outputs), -R for restow (to delete removed files), -t for specifying target directory
+# stow -v -R -t $TARGET_DIR $PACKAGE
 
 # symlink x11 files to $HOME
 stow -v -R -t $HOME/ x11
