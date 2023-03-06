@@ -1,8 +1,34 @@
+#!/bin/bash
 # check if stow installed
 if ! command -v stow &> /dev/null; then
   echo "Stow package could not be found! Please install stow package before executing this script."
   echo "For Arch-based distros: pacman -S stow"
   exit
+fi
+
+while getopts ":sh" o; do
+  case "${o}" in
+    s)
+      FROM_SCRATCH=true
+      ;;
+    *)
+      echo "Parameters: "
+      echo "  -s : install from scratch (installs all packages like zsh, nvim etc.)"
+      echo "  -h : help (shows this message)"
+      exit
+      ;;
+  esac
+done
+
+if [ $FROM_SCRATCH ]; then
+  REQUIRED_PACKAGES="ttf-jetbrains-mono-nerd ttf-hack-nerd neovim alacritty zsh"
+  if [ $(which pacman) ]; then
+    echo "Pacman found, necessary packages will be automatically installed."
+    sudo pacman -S $REQUIRED_PACKAGES
+  else
+    echo "Could not find Pacman, you can install required packages according to your own package manager"
+    echo "Here is the list of required packages: $REQUIRED_PACKAGES"
+  fi
 fi
 
 # -v for verbose (log outputs), -R for restow (to delete removed files)
