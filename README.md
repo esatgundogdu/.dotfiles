@@ -1,5 +1,10 @@
 # dotfiles
 
+## TODO
+- awesomewm configuration
+- Picom configuration
+- Emacs configuration
+
 ## Installation
 Install all packages and configurations from scratch
 ```bash
