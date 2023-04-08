@@ -1,6 +1,6 @@
 #!/bin/sh
 
-conda=true
+conda=false
 
 # some useful options (man zshoptions)
 setopt autocd extendedglob nomatch menucomplete
@@ -39,6 +39,8 @@ zsh_add_completion "esc/conda-zsh-completion" $conda
 
 # Edit line in vim with ctrl-e:
 #autoload edit-command-line; zle -N edit-command-line
+
+eval "$(zoxide init zsh)"
 
 if $conda ; then
     # >>> conda initialize >>>

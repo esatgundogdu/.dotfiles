@@ -8,3 +8,16 @@ vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})	-- project search
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})      -- buffers
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
+require('telescope').setup{
+    defaults = {
+        mappings = {
+            n = {
+                ['<c-d>'] = require('telescope.actions').delete_buffer
+            },
+            i = {
+                ['<c-d>'] = require('telescope.actions').delete_buffer
+            }
+        }
+    }
+}
+
