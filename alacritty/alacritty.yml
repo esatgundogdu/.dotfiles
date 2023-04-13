@@ -8,6 +8,7 @@ window:
 # Keybindinds
 key_bindings:
   - { key: V, mods: Control|Shift, action: Paste }
+  - { key: NumpadEnter, mods: None, chars: "\r" }
 
 # Color Scheme
 #import:
