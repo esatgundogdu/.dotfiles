@@ -8,6 +8,8 @@ vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})	-- project search
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})      -- buffers
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
+require('telescope').load_extension('media_files')
+
 require('telescope').setup{
     defaults = {
         mappings = {
@@ -17,7 +19,7 @@ require('telescope').setup{
             i = {
                 ['<c-d>'] = require('telescope.actions').delete_buffer
             }
-        }
-    }
+        },
+    },
 }
 

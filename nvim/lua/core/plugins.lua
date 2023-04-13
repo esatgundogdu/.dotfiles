@@ -25,6 +25,8 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+  use {'nvim-lua/popup.nvim'}
+  use {'nvim-telescope/telescope-media-files.nvim'}
   use {
 	"windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
@@ -65,6 +67,7 @@ return require('packer').startup(function(use)
     end
   }
   use "terrortylor/nvim-comment"
+  use "christoomey/vim-tmux-navigator"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

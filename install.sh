@@ -50,3 +50,18 @@ stow -v -R -t $HOME/.config/nvim nvim
 # alacritty
 mkdir $HOME/.config/alacritty 2>/dev/null
 stow -v -R -t $HOME/.config/alacritty alacritty
+
+# awesome
+mkdir $HOME/.config/awesome 2>/dev/null
+stow -v -R -t $HOME/.config/awesome awesome
+
+# picom
+stow -v -R -t $HOME/.config/ picom
+
+# tmux
+mkdir $HOME/.config/tmux 2>/dev/null
+if [ $FROM_SCRATCH ]; then
+    rm -rf ~/.config/tmux/plugins/tpm 2>/dev/null
+    git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+fi
+stow -v -R -t $HOME/.config/tmux/ tmux
