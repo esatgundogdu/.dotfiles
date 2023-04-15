@@ -4,6 +4,7 @@
 - awesomewm configuration
 - Picom configuration
 - Emacs configuration
+- Zap zsh configuration, url:https://www.zapzsh.org/
 
 ## Installation
 Install all packages and configurations from scratch
