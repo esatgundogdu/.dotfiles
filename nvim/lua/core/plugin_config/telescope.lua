@@ -7,6 +7,8 @@ vim.keymap.set('n', '<leader>pf', builtin.find_files, {})	-- project files
 vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})	-- project search
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})      -- buffers
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, {})
+vim.keymap.set('n', '<leader>gr', builtin.lsp_references, {})
 
 require('telescope').load_extension('media_files')
 

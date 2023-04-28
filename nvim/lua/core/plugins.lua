@@ -68,6 +68,10 @@ return require('packer').startup(function(use)
   }
   use "terrortylor/nvim-comment"
   use "christoomey/vim-tmux-navigator"
+  use {
+      'stevearc/aerial.nvim',
+      config = function() require('aerial').setup() end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

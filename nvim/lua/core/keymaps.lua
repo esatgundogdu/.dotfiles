@@ -38,3 +38,4 @@ vim.keymap.set("v", "<S-Tab>", "<gv", { silent = true })
 
 -- terminal mode to normal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+

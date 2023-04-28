@@ -54,6 +54,7 @@ lsp.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+  vim.keymap.set('n', 'gD', function() vim.lsp.buf.declaration() end, opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
   vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
   vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
@@ -63,6 +64,13 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-k>", function() vim.lsp.buf.signature_help() end, opts)
+
+  -- TODO
+  -- vim.keymap.set('n', '<space>wa', function() vim.lsp.buf.add_workspace_folder() end, opts)
+  -- vim.keymap.set('n', '<space>wr', function() vim.lsp.buf.remove_workspace_folder() end, opts)
+  -- vim.keymap.set('n', '<space>wl', function()
+  --     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  --   end, opts)
 end)
 
 lsp.setup()
