@@ -1,10 +1,10 @@
 # dotfiles
 
 ## TODO
-- awesomewm configuration
-- Picom configuration
 - Emacs configuration
 - Zap zsh configuration, url:https://www.zapzsh.org/
+- Rofi(Wofi) configuration
+- Eww - Waybar configuration
 
 ## Installation
 Install all packages and configurations from scratch

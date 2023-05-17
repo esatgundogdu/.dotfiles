@@ -25,7 +25,7 @@ while getopts ":sh" o; do
 done
 
 if [ $FROM_SCRATCH ]; then
-  REQUIRED_PACKAGES="ttf-jetbrains-mono-nerd ttf-hack-nerd neovim alacritty zsh ripgrep npm xclip zoxide"
+  REQUIRED_PACKAGES="ttf-jetbrains-mono-nerd ttf-hack-nerd neovim alacritty zsh ripgrep npm xclip zoxide wl-clipboard"
   if [ ! -z $(which pacman 2>/dev/null) ]; then
     echo "Pacman found, necessary packages will be automatically installed."
     sudo pacman -S $REQUIRED_PACKAGES
@@ -50,6 +50,14 @@ stow -v -R -t $HOME/.config/nvim nvim
 # alacritty
 mkdir $HOME/.config/alacritty 2>/dev/null
 stow -v -R -t $HOME/.config/alacritty alacritty
+
+# Hyprland
+mkdir $HOME/.config/hypr 2>/dev/null
+stow -v -R -t $HOME/.config/hypr hypr
+
+# Waybar
+mkdir $HOME/.config/waybar 2>/dev/null
+stow -v -R -t $HOME/.config/waybar waybar
 
 # awesome
 mkdir $HOME/.config/awesome 2>/dev/null
