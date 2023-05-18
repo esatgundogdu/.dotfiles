@@ -72,6 +72,7 @@ return require('packer').startup(function(use)
       'stevearc/aerial.nvim',
       config = function() require('aerial').setup() end
   }
+  use "elkowar/yuck.vim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

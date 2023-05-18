@@ -3,8 +3,9 @@
 ## TODO
 - Emacs configuration
 - Zap zsh configuration, url:https://www.zapzsh.org/
-- Rofi(Wofi) configuration
+- Wofi configuration
 - Eww - Waybar configuration
+- swaylock
 
 ## Installation
 Install all packages and configurations from scratch

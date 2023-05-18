@@ -25,7 +25,7 @@ while getopts ":sh" o; do
 done
 
 if [ $FROM_SCRATCH ]; then
-  REQUIRED_PACKAGES="ttf-jetbrains-mono-nerd ttf-hack-nerd neovim alacritty zsh ripgrep npm xclip zoxide wl-clipboard"
+  REQUIRED_PACKAGES="ttf-jetbrains-mono-nerd ttf-hack-nerd neovim alacritty zsh ripgrep npm xclip zoxide wl-clipboard papirus-icon-theme"
   if [ ! -z $(which pacman 2>/dev/null) ]; then
     echo "Pacman found, necessary packages will be automatically installed."
     sudo pacman -S $REQUIRED_PACKAGES
@@ -43,25 +43,34 @@ stow -v -R -t $HOME/ x11
 
 # zsh dir changed in x11/.xprofile, no need to stow zsh dir
 
+function stow_config_dir() {
+    mkdir $HOME/.config/$1 2>/dev/null 
+    stow -v -R -t $HOME/.config/$1 $1
+}
+
 # nvim
-mkdir $HOME/.config/nvim 2>/dev/null
-stow -v -R -t $HOME/.config/nvim nvim
+stow_config_dir nvim
 
 # alacritty
-mkdir $HOME/.config/alacritty 2>/dev/null
-stow -v -R -t $HOME/.config/alacritty alacritty
+stow_config_dir alacritty
 
 # Hyprland
-mkdir $HOME/.config/hypr 2>/dev/null
-stow -v -R -t $HOME/.config/hypr hypr
+stow_config_dir hypr
 
 # Waybar
-mkdir $HOME/.config/waybar 2>/dev/null
-stow -v -R -t $HOME/.config/waybar waybar
+stow_config_dir waybar
+
+# eww
+stow_config_dir eww
+
+# mako
+stow_config_dir mako
+
+# wofi
+stow_config_dir wofi
 
 # awesome
-mkdir $HOME/.config/awesome 2>/dev/null
-stow -v -R -t $HOME/.config/awesome awesome
+stow_config_dir awesome
 
 # picom
 stow -v -R -t $HOME/.config/ picom

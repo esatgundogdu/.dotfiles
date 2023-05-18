@@ -1,0 +1,64 @@
+@define-color accent #bbccdd;
+@define-color bg #24273a;
+
+* {
+    font-size: 24px;
+    font-family: "Roboto Mono Medium";    
+}
+
+window {
+    margin: 0px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 2px solid @accent;
+    background-color: @bg;
+    color: white;
+}
+
+ #outer-box {
+    margin: 5px;
+    padding: 5px;
+    border: none;
+    background-color: @bg;
+ }
+
+#inner-box {
+    border: none;
+    background-color: @bg;
+}
+
+ #input {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    color: @accent;
+    background-color: @bg;
+ }
+
+#scroll {
+    margin: 0px;
+    padding: 10px;
+    border: none;
+ }
+
+#text {
+    margin: 5px;
+}
+
+#entry {
+    padding: 0.25em;
+}
+
+#entry:selected {
+    background-color: @accent;
+}
+
+#text:selected {
+    color: #333333;
+}
+
+image {
+    margin-left: .25em;
+    margin-right: .25em;
+}
+
