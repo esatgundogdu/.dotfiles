@@ -19,19 +19,21 @@ autoload -Uz colors && colors
 # Useful functions
 source "$ZDOTDIR/functions.zsh"
 
+# Plugins
+zsh_add_plugin "zsh-users/zsh-autosuggestions"
+zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+#zsh_add_plugin "bilelmoussaoui/flatpak-zsh-completion"
+if $conda; then
+    zsh_add_completion "esc/conda-zsh-completion" $conda
+fi
+# For more plugins: https://github.com/unixorn/awesome-zsh-plugins
+# More completions https://github.com/zsh-users/zsh-completions
+
 # Normal files to source
 for i in $(ls $ZDOTDIR/*.zsh);
 do
   source $i;
 done
-
-# Plugins
-zsh_add_plugin "zsh-users/zsh-autosuggestions"
-zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
-#zsh_add_plugin "bilelmoussaoui/flatpak-zsh-completion"
-zsh_add_completion "esc/conda-zsh-completion" $conda
-# For more plugins: https://github.com/unixorn/awesome-zsh-plugins
-# More completions https://github.com/zsh-users/zsh-completions
 
 # FZF
 #[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
@@ -60,3 +62,5 @@ if $conda ; then
     unset __conda_setup
     # <<< conda initialize <<<
 fi
+
+source /opt/ros/noetic/setup.zsh
