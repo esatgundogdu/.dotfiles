@@ -63,4 +63,3 @@ if $conda ; then
     # <<< conda initialize <<<
 fi
 
-source /opt/ros/noetic/setup.zsh
