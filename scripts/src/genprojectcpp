@@ -1,0 +1,27 @@
+#!/bin/bash
+
+cp -r ~/Templates/cpp_project_temp/ $1
+cd $1
+
+cmakelists_file="CMakeLists.txt"
+if [ ! -f "$cmakelists_file" ]; then
+    echo "Could not find CMakeLists.txt file."
+    exit 1
+fi
+
+# check arg
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 project_name"
+    exit 1
+fi
+
+project_name=$1
+
+temp_file="temp_cmakelists.txt"
+
+cp "$cmakelists_file" "$temp_file"
+sed -i "s/project([^)]*)/project($project_name)/" "$temp_file"
+mv "$temp_file" "$cmakelists_file"
+
+echo "Generated project: $project_name"
+

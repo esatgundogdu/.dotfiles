@@ -18,7 +18,7 @@ key_bindings:
 #  size: 9
 
 font:
-  size: 13
+  size: 14
   normal:
     #family: Hack Nerd Font Mono
     family: JetBrainsMonoNL Nerd Font Mono

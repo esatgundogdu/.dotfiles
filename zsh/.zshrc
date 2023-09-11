@@ -1,6 +1,8 @@
 #!/bin/sh
 
 conda=false
+# source scripts dir
+path+=~/.dotfiles/scripts/src/ 
 
 # some useful options (man zshoptions)
 setopt autocd extendedglob nomatch menucomplete

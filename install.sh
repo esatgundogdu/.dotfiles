@@ -25,7 +25,15 @@ while getopts ":sh" o; do
 done
 
 if [ $FROM_SCRATCH ]; then
-  REQUIRED_PACKAGES="ttf-jetbrains-mono-nerd ttf-hack-nerd neovim alacritty zsh ripgrep npm xclip zoxide wl-clipboard papirus-icon-theme"
+    # copy template files
+    source_directory=~/.dotfiles/scripts/templates
+    destination_directory=~/Templates
+    files=$(ls -1 "$source_directory")
+    for file in $files; do
+        cp -r "$source_directory/$file" "$destination_directory"
+    done
+
+  REQUIRED_PACKAGES="ttf-jetbrains-mono-nerd ttf-hack-nerd neovim alacritty zsh ripgrep npm xclip zoxide wl-clipboard papirus-icon-theme polkit-kde-agent"
   if [ ! -z $(which pacman 2>/dev/null) ]; then
     echo "Pacman found, necessary packages will be automatically installed."
     sudo pacman -S $REQUIRED_PACKAGES

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd /tmp
+g++ cpp_template.cpp
+
+if [ $? -eq 0 ]; then
+    ./a.out
+fi

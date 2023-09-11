@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo -E -s nvim $1
